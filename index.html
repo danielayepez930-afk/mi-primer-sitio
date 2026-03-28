@@ -1,904 +1,201 @@
+```html
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIXAREA | Streetwear México 2026 - Edición Limitada</title>
-
-    <!-- SEO MEJORADO -->
-    <meta name="description" content="Colección Limited Edition México 2026. Streetwear con diseños originales del Águila Azteca. Camisetas, gorras y tazas premium. Envíos a todo el mundo.">
-    <meta name="keywords" content="México 2026, streetwear mexicano, camiseta águila azteca, gorra México 2026, ropa mundial 2026, PIXAREA, edición limitada">
-    <meta name="author" content="PIXAREA">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://pixarea.myshopify.com">
-
-    <!-- Open Graph para redes sociales -->
-    <meta property="og:title" content="PIXAREA | Streetwear México 2026 - Edición Limitada">
-    <meta property="og:description" content="Colección Limited Edition México 2026. Diseños originales del Águila Azteca. Camisetas, gorras y tazas premium.">
-    <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0742/0379/1548/files/4582172981207799915_2048x2048.jpg">
-    <meta property="og:url" content="https://pixarea.myshopify.com">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PIXAREA | Streetwear México 2026">
-    <meta name="twitter:description" content="Colección Limited Edition México 2026. Diseños originales del Águila Azteca.">
-    <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0742/0379/1548/files/4582172981207799915_2048x2048.jpg">
-
-    <!-- Preconnect para mejor rendimiento -->
-    <link rel="preconnect" href="https://cdn.shopify.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://pixarea.myshopify.com">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-
-    <style>
-        /* COLORES OFICIALES PIXAREA (de tu tienda Shopify) */
-        :root {
-            --verde-principal: #006847;
-            --verde-oscuro: #004d35;
-            --fondo-oscuro: #0a1628;
-            --fondo-gradiente-start: #006847;
-            --fondo-gradiente-end: #c41e3a;
-            --texto-blanco: #ffffff;
-            --texto-gris: #e0e0e0;
-            --boton-blanco: #ffffff;
-            --boton-texto: #000000;
-            --amarillo-dorado: #FFD700;
-            --verde-banner: #005a3d;
-        }
-
-        /* RESET Y CONFIGURACIÓN GENERAL */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-            background-color: var(--fondo-oscuro);
-            color: var(--texto-blanco);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* BANNER SUPERIOR (Announcement Bar) */
-        .announcement-bar {
-            background: var(--verde-banner);
-            color: var(--texto-blanco);
-            text-align: center;
-            padding: 12px 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .announcement-bar-text {
-            flex: 1;
-            text-align: center;
-        }
-
-        .announcement-bar-nav {
-            display: flex;
-            gap: 15px;
-        }
-
-        .announcement-bar-nav button {
-            background: none;
-            border: none;
-            color: var(--texto-blanco);
-            cursor: pointer;
-            font-size: 1rem;
-            padding: 5px;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        .announcement-bar-nav button:hover {
-            opacity: 1;
-        }
-
-        /* HEADER Y NAVEGACIÓN */
-        header {
-            background: var(--verde-principal);
-            position: sticky;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        /* LOGO ESTILIZADO */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--amarillo-dorado), #FFA500);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.3rem;
-            color: var(--verde-principal);
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-        }
-
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--texto-blanco);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .logo-text span {
-            color: var(--amarillo-dorado);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--texto-blanco);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: opacity 0.3s;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--amarillo-dorado);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .btn-outline {
-            padding: 10px 25px;
-            border: 2px solid var(--texto-blanco);
-            background: transparent;
-            color: var(--texto-blanco);
-            font-weight: 600;
-            border-radius: 25px;
-            text-decoration: none;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-        }
-
-        .btn-outline:hover {
-            background: var(--texto-blanco);
-            color: var(--verde-principal);
-        }
-
-        .cart-icon {
-            color: var(--texto-blanco);
-            font-size: 1.3rem;
-            position: relative;
-            text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            background: linear-gradient(135deg, rgba(0, 104, 71, 0.85), rgba(10, 22, 40, 0.9)), 
-                        url('https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-            background-size: cover;
-            background-position: center;
-            color: var(--texto-blanco);
-            text-align: center;
-            padding: 150px 20px 120px;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 50px 50px;
-            opacity: 0.3;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.95;
-            font-weight: 300;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: var(--boton-blanco);
-            color: var(--boton-texto);
-            padding: 18px 50px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .btn-primary:hover {
-            background: var(--amarillo-dorado);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        /* PRODUCTOS SECTION */
-        .section-title {
-            text-align: center;
-            font-size: 2.8rem;
-            margin: 80px 0 20px;
-            color: var(--texto-blanco);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--texto-gris);
-            margin-bottom: 50px;
-            font-size: 1.1rem;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .product-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.4s ease;
-            backdrop-filter: blur(10px);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--verde-principal);
-            box-shadow: 0 20px 40px rgba(0, 104, 71, 0.2);
-        }
-
-        .product-img-container {
-            width: 100%;
-            height: 320px;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .product-card:hover .product-img {
-            transform: scale(1.05);
-        }
-
-        .product-info {
-            padding: 30px;
-        }
-
-        .product-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--texto-blanco);
-            font-weight: 700;
-        }
-
-        .product-description {
-            color: var(--texto-gris);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .product-price {
-            font-size: 1.8rem;
-            color: var(--amarillo-dorado);
-            font-weight: 800;
-            margin: 15px 0;
-        }
-
-        .btn-product {
-            display: block;
-            background: var(--verde-principal);
-            color: var(--texto-blanco);
-            text-align: center;
-            padding: 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 15px;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 2px solid var(--verde-principal);
-        }
-
-        .btn-product:hover {
-            background: transparent;
-            color: var(--verde-principal);
-        }
-
-        /* HISTORIA SECTION */
-        .story {
-            background: linear-gradient(135deg, var(--fondo-gradiente-start), var(--fondo-gradiente-end));
-            padding: 100px 20px;
-            margin: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .story::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.05)"/></svg>');
-            background-size: 30px 30px;
-            animation: moveBackground 20s linear infinite;
-        }
-
-        @keyframes moveBackground {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        .story-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .story h2 {
-            font-size: 2.8rem;
-            margin-bottom: 40px;
-            color: var(--texto-blanco);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-        }
-
-        .story p {
-            font-size: 1.2rem;
-            line-height: 1.9;
-            color: var(--texto-blanco);
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .story-features {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .story-feature {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
-        .story-feature i {
-            font-size: 1.2rem;
-            color: var(--amarillo-dorado);
-        }
-
-        /* TESTIMONIOS */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 35px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s;
-        }
-
-        .testimonial-card:hover {
-            border-color: var(--verde-principal);
-            transform: translateY(-5px);
-        }
-
-        .testimonial-stars {
-            color: var(--amarillo-dorado);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--texto-gris);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--texto-blanco);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .testimonial-author::before {
-            content: '';
-            width: 30px;
-            height: 2px;
-            background: var(--verde-principal);
-        }
-
-        /* CTA FINAL */
-        .final-cta {
-            background: linear-gradient(135deg, var(--verde-principal), var(--verde-oscuro));
-            color: var(--texto-blanco);
-            text-align: center;
-            padding: 100px 20px;
-            border-radius: 30px;
-            margin: 60px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: 40px 40px;
-        }
-
-        .final-cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .final-cta h2 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 800;
-        }
-
-        .final-cta p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            opacity: 0.95;
-        }
-
-        .btn-white {
-            display: inline-block;
-            background: var(--boton-blanco);
-            color: var(--boton-texto);
-            padding: 18px 50px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 50px;
-            text-decoration: none;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-
-        .btn-white:hover {
-            background: var(--amarillo-dorado);
-            transform: scale(1.05);
-        }
-
-        /* FOOTER */
-        footer {
-            background: #050a10;
-            color: var(--texto-gris);
-            padding: 70px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, var(--amarillo-dorado), #FFA500);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.1rem;
-            color: var(--verde-principal);
-        }
-
-        .footer-logo-text {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--texto-blanco);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .footer-about p {
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .footer-links h3 {
-            color: var(--texto-blanco);
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .footer-links a {
-            display: block;
-            color: var(--texto-gris);
-            text-decoration: none;
-            margin-bottom: 12px;
-            transition: all 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--verde-principal);
-            padding-left: 5px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--texto-blanco);
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 1.1rem;
-        }
-
-        .social-icons a:hover {
-            background: var(--verde-principal);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .announcement-bar {
-                font-size: 0.8rem;
-                padding: 10px 15px;
-            }
-
-            .announcement-bar-nav {
-                display: none;
-            }
-
-            .nav-container {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                gap: 20px;
-            }
-
-            .hero {
-                padding: 120px 20px 80px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .story h2 {
-                font-size: 2rem;
-            }
-
-            .final-cta h2 {
-                font-size: 2rem;
-            }
-
-            .story-features {
-                flex-direction: column;
-                gap: 20px;
-            }
-        }
-
-        /* ANIMACIONES */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* LAZY LOADING */
-        img[loading="lazy"] {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        img[loading="lazy"].loaded {
-            opacity: 1;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PIXAREA | Streetwear México 2026</title>
+<meta property="og:description" content="Colección Limited Edition México 2026">
+
+<style>
+{ margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Arial', sans-serif; background: #0a0a0a; color: white; }
+
+/ HERO - Primera imagen (28zFrA6) /
+.hero {
+height: 100vh;
+background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.8)),
+url('https://i.imgur.com/28zFrA6.jpg');
+background-size: cover;
+background-position: center;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.hero-content h1 {
+font-size: 5rem;
+text-transform: uppercase;
+letter-spacing: -3px;
+margin-bottom: 15px;
+text-shadow: 3px 3px 15px rgba(0,0,0,0.9);
+}
+
+.hero-content p {
+color: #ff3c00;
+font-size: 1.4rem;
+letter-spacing: 4px;
+margin-bottom: 40px;
+font-weight: bold;
+}
+
+.btn {
+background: #ff3c00;
+color: white;
+padding: 20px 50px;
+text-decoration: none;
+font-weight: bold;
+font-size: 1.1rem;
+display: inline-block;
+border: 3px solid #ff3c00;
+transition: all 0.3s;
+}
+
+.btn:hover {
+background: transparent;
+transform: translateY(-3px);
+box-shadow: 0 10px 30px rgba(255,60,0,0.3);
+}
+
+/ PRODUCTOS /
+.productos {
+padding: 100px 20px;
+max-width: 1400px;
+margin: 0 auto;
+}
+
+.titulo-seccion {
+text-align: center;
+font-size: 3rem;
+margin-bottom: 60px;
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 40px;
+}
+
+.card {
+background: #151515;
+overflow: hidden;
+position: relative;
+transition: transform 0.3s;
+}
+
+.card:hover {
+transform: translateY(-10px);
+}
+
+.card img {
+width: 100%;
+height: 450px;
+object-fit: cover;
+display: block;
+}
+
+.card-info {
+padding: 30px;
+border-top: 3px solid #ff3c00;
+}
+
+.card h3 {
+font-size: 1.4rem;
+margin-bottom: 10px;
+text-transform: uppercase;
+letter-spacing: 1px;
+}
+
+.precio {
+color: #ff3c00;
+font-size: 1.8rem;
+font-weight: bold;
+}
+
+.badge {
+background: #ff3c00;
+color: white;
+padding: 8px 20px;
+font-size: 0.9rem;
+font-weight: bold;
+position: absolute;
+top: 20px;
+right: 20px;
+text-transform: uppercase;
+}
+
+/ Responsive */
+@media (max-width: 768px) {
+.hero-content h1 { font-size: 3rem; letter-spacing: -1px; }
+.hero-content p { font-size: 1.1rem; letter-spacing: 2px; }
+.titulo-seccion { font-size: 2rem; }
+.card img { height: 350px; }
+}
+</style>
 </head>
 <body>
-    <!-- BANNER SUPERIOR (Announcement Bar) -->
-    <div class="announcement-bar">
-        <div class="announcement-bar-nav">
-            <button aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-        </div>
-        <p class="announcement-bar-text">Diseños inspirados en la historia, la identidad y la pasión del fútbol en casa.</p>
-        <div class="announcement-bar-nav">
-            <button aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </div>
 
-    <!-- HEADER / NAVEGACIÓN -->
-    <header>
-        <div class="container nav-container">
-            <a href="#" class="logo">
-                <div class="logo-icon">P</div>
-                <span class="logo-text">pix<span>area</span></span>
-            </a>
-            <nav class="nav-links">
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Catálogo</a>
-                <a href="#historia">Nosotros</a>
-                <a href="#contacto">Contacto</a>
-            </nav>
-            <div class="nav-buttons">
-                <a href="https://pixarea.myshopify.com" class="btn-outline">Tienda</a>
-                <a href="https://pixarea.myshopify.com/cart" class="cart-icon">
-                    <i class="fas fa-shopping-bag"></i>
-                </a>
-            </div>
-        </div>
-    </header>
+<!-- HERO - Imagen 1 -->
+<section class="hero">
+<div class="hero-content">
+<p>Edición Limitada</p>
+<h1>México 2026</h1>
+<p style="color: white; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 40px;">
+Diseños originales del Águila Azteca
+</p>
+<a href="#coleccion" class="btn">Ver Colección</a>
+</div>
+</section>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="inicio">
-        <div class="container hero-content">
-            <h1>Streetwear con Alma Mexicana</h1>
-            <p>Colección Limited Edition México 2026. Cada pieza cuenta una historia de pasión, tradición y modernidad. Lleva contigo el espíritu del torneo.</p>
-            <a href="#productos" class="btn-primary">Ver Colección 2026</a>
-        </div>
-    </section>
+<!-- PRODUCTOS - Imágenes 2, 3, 4, 5 -->
+<section class="productos" id="coleccion">
+<h2 class="titulo-seccion">Piezas Exclusivas</h2>
 
-    <!-- PRODUCTOS -->
-    <section class="container" id="productos">
-        <h2 class="section-title">Productos Destacados</h2>
-        <p class="section-subtitle">Diseños originales inspirados en la energía del fútbol y la identidad cultural de México</p>
+<div class="grid">
+<!-- Producto 1 - Imagen 2 (vRW2dFd) -->
+<div class="card">
+<span class="badge">50 UDS</span>
+<img src="https://i.imgur.com/vRW2dFd.jpg" alt="Playera Águila Azteca">
+<div class="card-info">
+<h3>Águila Azteca Oversized</h3>
+<p class="precio">$899 MXN</p>
+</div>
+</div>
 
-  <div class="products-grid">
-    <!-- PRODUCTO 1 - CAMISETA AZTEC EAGLE -->
-    <article class="product-card">
-        <div class="product-img-container">
-            <img src="images/camiseta-aztec-eagle.jpg"
-                 alt="Camiseta Aztec Eagle México 2026"
-                 class="product-img"
-                 loading="lazy">
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">MÉXICO 2026 "Águila Azteca" Premium</h3>
-            <p class="product-description">Edición Leyendas Unidas. Diseño premium en negro con el majestuoso Águila Azteca.</p>
-            <div class="product-price">$29.99 USD</div>
-            <a href="https://pixarea.myshopify.com/products/mexico-2026-aztec-eagle-premium-graphic-tee-united-legends-edition" class="btn-product">Comprar Ahora</a>
-        </div>
-    </article>
+<!-- Producto 2 - Imagen 3 (wzYp0Jm) -->
+<div class="card">
+<img src="https://i.imgur.com/wzYp0Jm.jpg" alt="Hoodie México 2026">
+<div class="card-info">
+<h3>Hoodie México 2026</h3>
+<p class="precio">$1,299 MXN</p>
+</div>
+</div>
 
-    <!-- PRODUCTO 2 - CAMISETA ÁGUILA IMPERIAL -->
-    <article class="product-card">
-        <div class="product-img-container">
-            <img src="images/camiseta-águila-imperial.png"
-                 alt="Camiseta Águila Imperial 2026"
-                 class="product-img"
-                 loading="lazy">
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">Camiseta gráfica premium "Águila Azteca"</h3>
-            <p class="product-description">MÉXICO 2026 — Edición Leyendas Unidas. Diseño exclusivo PIXAREA.</p>
-            <div class="product-price">$29.99 USD</div>
-            <a href="https://pixarea.myshopify.com/products/aguila-imperial-2026-orgullo-azteca-edicion-limitada" class="btn-product">Comprar Ahora</a>
-        </div>
-    </article>
+<!-- Producto 3 - Imagen 4 (iHhXIxA) -->
+<div class="card">
+<span class="badge">NUEVO</span>
+<img src="https://i.imgur.com/iHhXIxA.jpg" alt="Gorra PIXAREA">
+<div class="card-info">
+<h3>Gorra Águila Embroidery</h3>
+<p class="precio">$599 MXN</p>
+</div>
+</div>
 
-    <!-- PRODUCTO 3 - SUDADERA -->
-    <article class="product-card">
-        <div class="product-img-container">
-            <img src="images/sudadera-águila-imperial.jpg"
-                 alt="Sudadera Águila Imperial 2026"
-                 class="product-img"
-                 loading="lazy">
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">Sudadera Águila Imperial 2026 · Orgullo Azteca Edición Limitada</h3>
-            <p class="product-description">No esperes a que llegue el 2026 para demostrar quién manda en casa. Diseño vibrante que fusiona la majestuosidad del águila guerrera.</p>
-            <div class="product-price">$49.99 USD</div>
-            <a href="https://pixarea.myshopify.com/products/9135905505468" class="btn-product">Comprar Ahora</a>
-        </div>
-    </article>
+<!-- Producto 4 - Imagen 5 (P10fgi3) -->
+<div class="card">
+<img src="https://i.imgur.com/P10fgi3.jpg" alt="Crewneck PIXAREA">
+<div class="card-info">
+<h3>Crewneck Edición Especial</h3>
+<p class="precio">$1,099 MXN</p>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- PRODUCTO 4 - GORRA -->
-    <article class="product-card">
-        <div class="product-img-container">
-            <img src="images/Gorra Orgullo Azteca.png"
-                 alt="Gorra México 2026 Orgullo Azteca"
-                 class="product-img"
-                 loading="lazy">
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">Gorra · México 2026 · Orgullo Azteca</h3>
-            <p class="product-description">Ajustable, diseño estructurado de perfil medio. Material resistente para uso diario.</p>
-            <div class="product-price">$24.99 USD</div>
-            <a href="https://pixarea.myshopify.com/products/gorra-mexico-2026-orgullo-azteca" class="btn-product">Comprar Ahora</a>
-        </div>
-    </article>
+</body>
+</html>
+```
 
-    <!-- PRODUCTO 5 - TAZA -->
-    <article class="product-card">
-        <div class="product-img-container">
-            <img src="images/Taza · México 2026 · Orgullo Azteca.png"
-                 alt="Taza México 2026 Orgullo Azteca"
-                 class="product-img"
-                 loading="lazy">
-        </div>
-        <div class="product-info">
-            <h3 class="product-title">Taza · México 2026 · Orgullo Azteca</h3>
-            <p class="product-description">Cerámica de alta calidad, impresión resistente. Capacidad 325ml (11oz).</p>
-            <div class="product-price">$24.00 USD</div>
-            <a href="https://pixarea.myshopify.com/products/taza-mexico-2026-orgullo-azteca" class="btn-product">Comprar Ahora</a>
-        </div>
-    </article>
-</div> 
